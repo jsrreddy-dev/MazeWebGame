@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icon.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puzzel Memory</title>
+  </head>
+  <body>
+    <header>
+      <p>Jashwanth SR | Puzzel Memory Web Game</p>
+    </header>
+    <br><div id="level-display">Level: 1</div>
+    <p id="player-name-display"></p>
+    
+    <main>
+      <canvas id="gameCanvas">
+      </canvas>
+    </main>
+
+    <button id="restart-button">Restart Game</button>
+    <button id="home-button">Main Menu</button>
+   
+    
+    <footer>
+      <p>Created by JSR 2024</p>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+    <script type="module" src="element.js"></script>
+    <script>
+        document.getElementById('home-button').addEventListener('click', function() {
+          window.location.href = 'inedx.html';
+        });
+
+        const playerName = localStorage.getItem('playerName');
+        const playerNameDisplay = document.getElementById('player-name-display');
+        playerNameDisplay.textContent = playerName ? `Player Name: ${playerName}` : 'No player name found.';
+      </script>
+  </body>
+</html>
